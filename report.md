@@ -1,6 +1,6 @@
 
 # Relatório
-* Página do trabalho ([link GitHub](TODO))
+* Página do trabalho ([https://github.com/gabrielvlz/Trabalho-IAC](TODO))
 * Discente 1
    * Nome: Gabriel Velozo Tojal
    * Matrícula: 18110468

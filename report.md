@@ -18,8 +18,8 @@
 
 # ESPAÇO PARA O GRÁFICO 
 ##### Gráfico de uso de memória e GPU
-* Tons de verde estão relacionados à memória, no caso da porcentagem ao uso e não a quantidade
-* Tons de vermelho referem-se ao uso da CPU 
+* Tons de verde estão relacionados à memória, onde o uso está representado pela porcentagem.
+* Tons de vermelho referem-se ao uso da CPU .
 ![alt text](https://cdn.discordapp.com/attachments/483406101987983371/497595979155898380/unknown.png "Logo Title Text 1")
 
 ##### Gráfico da quantidade de memória em Kylobytes: 
@@ -29,4 +29,5 @@
 
 
 ## Discussão
-######   Após as primeiras falhas no projeto, com visível perda de desempenho e parada de funcionamento de alguns computadores devido ao abuso do processador; previa-se uma curva crescendente que atingiria o limite rapidamente, tornando-se constante em 100% (considerando um de core único). Contudo, ao tratar-se da memória, seu uso ascende até decair significativamente; tal fato ocorre devido da utilização, no processo pai(linhas de código 30 a 47), de um comando "sleep(tempo em segundos)" que ao se aproximar do limite de seu While reduz o gasto de memória para evitar desperdício, benefício que não ocorreria com um timeset . 
+######   Ao iniciar o projeto, a expectativa era de uma curva crescente que teria seu fim em 100%. Contudo, após as primeiras falhas e com visível perda de desempenho por longos períodos de tempo, inclusive; parada de funcionamento de algumas máquinas testadas devido ao extremo uso do processador e alocamento de memória que sequer tinham disponível; a possibilidade de uma curva de gráfico constante no limite (o que parecia impossível, tornou-se a melhor hipótese).
+###### Como o processo pai e o filho são executados simultaneamente; onde esse entra em dois loops infinitos ao comparar as strings *(strcmp(argv[1],"cpu") == 0)* e *(strcmp(argv[1],"cpu-mem") == 0)*, visível nas linhas 50 e 57; executando assim o protocolo de máxima utilização de CPU e memória principal. Como visível no gráfico, o processamento chega aos seus 100% e mantêm-se constante até aproximar- se dos nove segundos de utilização, onde decai significativamente.
